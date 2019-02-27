@@ -1,0 +1,65 @@
+
+$MAX_SPACING: 10;
+
+@mixin padding {
+  @for $size from 0 through $spaceSizes {
+    $padding: rem-calc($size);
+    .p#{$size} {
+      padding: $padding;
+    }
+    .pl-#{$size} {
+      padding-left: $padding;
+    }
+    .pr-#{$size} {
+      padding-right: $padding;
+    }
+    .pt-#{$size} {
+      padding-top: $padding;
+    }
+    .pb-#{$size} {
+      padding-bottom: $padding;
+    }
+    .px-#{$size} {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    .py-#{$size} {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+  }
+}
+
+@mixin margin {
+  @for $size from 0 through $spaceSizes {
+    $margin: rem-calc($size);
+    .m#{$size} {
+      margin: $margin;
+    }
+    .ml-#{$size} {
+      margin-left: $margin;
+    }
+    .mr-#{$size} {
+      margin-right: $margin;
+    }
+    .mt-#{$size} {
+      margin-top: $margin;
+    }
+    .mb-#{$size} {
+      margin-bottom: $margin;
+    }
+    .mx-#{$size} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my-#{$size} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+}
+
+//TODO: spacing utils for property 'auto'
+
+@include padding;
+@include margin;
