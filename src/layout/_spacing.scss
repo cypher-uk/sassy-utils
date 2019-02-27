@@ -1,0 +1,68 @@
+@import '../functions/calculate-rem.scss';
+
+$MAX_SPACING: 10;
+
+@mixin padding {
+  @for $size from 0 through $MAX_SPACING {
+    $padding: calculate-rem($size);
+    .p#{$size} {
+      padding: $padding;
+    }
+    .px-#{$size} {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    .py-#{$size} {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+    .pt-#{$size} {
+      padding-top: $padding;
+    }
+    .pb-#{$size} {
+      padding-bottom: $padding;
+    }
+    .pl-#{$size} {
+      padding-left: $padding;
+    }
+    .pr-#{$size} {
+      padding-right: $padding;
+    }
+  }
+}
+
+@mixin margin {
+  @for $size from 0 through $MAX_SPACING {
+    $margin: calculate-rem($size);
+    .m#{$size} {
+      margin: $margin;
+    }
+    .mx-#{$size} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my-#{$size} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+    .mt-#{$size} {
+      margin-top: $margin;
+    }
+    .mb-#{$size} {
+      margin-bottom: $margin;
+    }
+    .ml-#{$size} {
+      margin-left: $margin;
+    }
+    .mr-#{$size} {
+      margin-right: $margin;
+    }
+
+
+  }
+}
+
+//TODO: spacing utils for property 'auto'
+
+@include padding;
+@include margin;
