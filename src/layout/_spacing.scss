@@ -7,18 +7,6 @@ $MAX_SPACING: 10;
     .p#{$size} {
       padding: $padding;
     }
-    .pl-#{$size} {
-      padding-left: $padding;
-    }
-    .pr-#{$size} {
-      padding-right: $padding;
-    }
-    .pt-#{$size} {
-      padding-top: $padding;
-    }
-    .pb-#{$size} {
-      padding-bottom: $padding;
-    }
     .px-#{$size} {
       padding-left: $padding;
       padding-right: $padding;
@@ -26,6 +14,18 @@ $MAX_SPACING: 10;
     .py-#{$size} {
       padding-top: $padding;
       padding-bottom: $padding;
+    }
+    .pt-#{$size} {
+      padding-top: $padding;
+    }
+    .pb-#{$size} {
+      padding-bottom: $padding;
+    }
+    .pl-#{$size} {
+      padding-left: $padding;
+    }
+    .pr-#{$size} {
+      padding-right: $padding;
     }
   }
 }
@@ -36,18 +36,6 @@ $MAX_SPACING: 10;
     .m#{$size} {
       margin: $margin;
     }
-    .ml-#{$size} {
-      margin-left: $margin;
-    }
-    .mr-#{$size} {
-      margin-right: $margin;
-    }
-    .mt-#{$size} {
-      margin-top: $margin;
-    }
-    .mb-#{$size} {
-      margin-bottom: $margin;
-    }
     .mx-#{$size} {
       margin-left: $margin;
       margin-right: $margin;
@@ -56,6 +44,20 @@ $MAX_SPACING: 10;
       margin-top: $margin;
       margin-bottom: $margin;
     }
+    .mt-#{$size} {
+      margin-top: $margin;
+    }
+    .mb-#{$size} {
+      margin-bottom: $margin;
+    }
+    .ml-#{$size} {
+      margin-left: $margin;
+    }
+    .mr-#{$size} {
+      margin-right: $margin;
+    }
+
+
   }
 }
 
