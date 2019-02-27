@@ -2,9 +2,9 @@ $DEFAULT_PIXEL_SIZE: 16 !default;
 
 @function calculate-rem($pxSize) {
   @if (unitless($pxSize)) {
-    @return #{$DEFAULT_PIXEL_SIZE / $pxSize}rem;
+    @return #{$pxSize / $DEFAULT_PIXEL_SIZE}rem;
   }
   $size: strip-unit($pxSize);
-  @return #{$DEFAULT_PIXEL_SIZE / $size}rem;
+  @return #{$size / $DEFAULT_PIXEL_SIZE}rem;
   
 }

@@ -1,9 +1,10 @@
+@import '../functions/calculate-rem.scss';
 
 $MAX_SPACING: 10;
 
 @mixin padding {
-  @for $size from 0 through $spaceSizes {
-    $padding: rem-calc($size);
+  @for $size from 0 through $MAX_SPACING {
+    $padding: calculate-rem($size);
     .p#{$size} {
       padding: $padding;
     }
@@ -31,8 +32,8 @@ $MAX_SPACING: 10;
 }
 
 @mixin margin {
-  @for $size from 0 through $spaceSizes {
-    $margin: rem-calc($size);
+  @for $size from 0 through $MAX_SPACING {
+    $margin: calculate-rem($size);
     .m#{$size} {
       margin: $margin;
     }
