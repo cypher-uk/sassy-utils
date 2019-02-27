@@ -4,7 +4,7 @@
   "description": "Utilities for SASS, inspired by Bootstrap",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css"
   },
   "repository": {
     "type": "git",
@@ -13,16 +13,16 @@
   "keywords": [
     "sass",
     "utilities",
-    "sass",
-    "utilities",
-    "bootstrap",
-    "4",
-    "utilities"
+    "bootstrap"
   ],
   "author": "Cypher Tech. Ltd",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cypher-uk/sassy-utils/issues"
   },
-  "homepage": "https://github.com/cypher-uk/sassy-utils#readme"
+  "homepage": "https://github.com/cypher-uk/sassy-utils#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.9",
+    "node-sass": "^4.11.0"
+  }
 }
