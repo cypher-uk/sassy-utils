@@ -1,0 +1,16 @@
+$MAX_SPACING: 10 !default;
+$SPACING_PROPS: (margin: m, padding: p);
+$MAX_BS4_SPACER: 3 !default;
+$spacer: 1rem;
+
+$spacers: (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * $MAX_BS4_SPACER),
+    // extra sizes!
+    6: ($spacer * ($MAX_BS4_SPACER + 1.5)),
+    7: ($spacer * ($MAX_BS4_SPACER * 2) + 1.5)
+);

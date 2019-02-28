@@ -1,40 +1,61 @@
-@import '../functions/calculate-rem.scss';
-
-$MAX_SPACING: 20 !default;
-$SPACING_PROPS: (margin: m, padding: p);
-
 @mixin spacing {
-  @for $size from 0 through $MAX_SPACING {
-    $value: calculate-rem($size) !important;
     @each $propName, $shortProp in $SPACING_PROPS {
-      .#{$shortProp}-#{$size} {
-        #{$propName}: $value;
-      }
-      .#{$shortProp}x-#{$size} {
-        #{$propName}-left: $value;
-        #{$propName}-right: $value;
-      }
-      .#{$shortProp}y-#{$size} {
-        #{$propName}-top: $value;
-        #{$propName}-bottom: $value;
-      }
-      .#{$shortProp}t-#{$size} {
-        #{$propName}-top: $value;
-      }
-      .#{$shortProp}b-#{$size} {
-        #{$propName}-bottom: $value;
-      }
-      .#{$shortProp}l-#{$size} {
-        #{$propName}-left: $value;
-      }
-      .#{$shortProp}r-#{$size} {
-        #{$propName}-right: $value;
+      @each $size, $space in $spacers {
+        $value: $space !important;
+        .#{$shortProp}-#{$size} {
+          #{$propName}: $value;
+        }
+        .#{$shortProp}x-#{$size} {
+          #{$propName}-left: $value;
+          #{$propName}-right: $value;
+        }
+        .#{$shortProp}y-#{$size} {
+          #{$propName}-top: $value;
+          #{$propName}-bottom: $value;
+        }
+        .#{$shortProp}t-#{$size} {
+          #{$propName}-top: $value;
+        }
+        .#{$shortProp}b-#{$size} {
+          #{$propName}-bottom: $value;
+        }
+        .#{$shortProp}l-#{$size} {
+          #{$propName}-left: $value;
+        }
+        .#{$shortProp}r-#{$size} {
+          #{$propName}-right: $value;
+        }
       }
     }
-  }
 }
 
-//TODO: spacing utils for property 'auto'
-//      negative spacing
+// auto margining
+.m-auto {
+  margin: auto !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+
+//   todo:   negative spacing
 
 @include spacing;
