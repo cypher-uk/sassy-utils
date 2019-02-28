@@ -1,68 +1,61 @@
-@import '../functions/calculate-rem.scss';
-
-$MAX_SPACING: 20 !default;
-
-@mixin padding {
-  @for $size from 0 through $MAX_SPACING {
-    $padding: calculate-rem($size) !important;
-    .p-#{$size} {
-      padding: $padding;
+@mixin spacing {
+    @each $propName, $shortProp in $SPACING_PROPS {
+      @each $size, $space in $spacers {
+        $value: $space !important;
+        .#{$shortProp}-#{$size} {
+          #{$propName}: $value;
+        }
+        .#{$shortProp}x-#{$size} {
+          #{$propName}-left: $value;
+          #{$propName}-right: $value;
+        }
+        .#{$shortProp}y-#{$size} {
+          #{$propName}-top: $value;
+          #{$propName}-bottom: $value;
+        }
+        .#{$shortProp}t-#{$size} {
+          #{$propName}-top: $value;
+        }
+        .#{$shortProp}b-#{$size} {
+          #{$propName}-bottom: $value;
+        }
+        .#{$shortProp}l-#{$size} {
+          #{$propName}-left: $value;
+        }
+        .#{$shortProp}r-#{$size} {
+          #{$propName}-right: $value;
+        }
+      }
     }
-    .px-#{$size} {
-      padding-left: $padding;
-      padding-right: $padding;
-    }
-    .py-#{$size} {
-      padding-top: $padding;
-      padding-bottom: $padding;
-    }
-    .pt-#{$size} {
-      padding-top: $padding;
-    }
-    .pb-#{$size} {
-      padding-bottom: $padding;
-    }
-    .pl-#{$size} {
-      padding-left: $padding;
-    }
-    .pr-#{$size} {
-      padding-right: $padding;
-    }
-  }
 }
 
-@mixin margin {
-  @for $size from 0 through $MAX_SPACING {
-    $margin: calculate-rem($size) !important;
-    .m-#{$size} {
-      margin: $margin;
-    }
-    .mx-#{$size} {
-      margin-left: $margin;
-      margin-right: $margin;
-    }
-    .my-#{$size} {
-      margin-top: $margin;
-      margin-bottom: $margin;
-    }
-    .mt-#{$size} {
-      margin-top: $margin;
-    }
-    .mb-#{$size} {
-      margin-bottom: $margin;
-    }
-    .ml-#{$size} {
-      margin-left: $margin;
-    }
-    .mr-#{$size} {
-      margin-right: $margin;
-    }
-
-
-  }
+// auto margining
+.m-auto {
+  margin: auto !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
 }
 
-//TODO: spacing utils for property 'auto'
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
 
-@include padding;
-@include margin;
+.ml-auto {
+  margin-left: auto !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+
+//   todo:   negative spacing
+
+@include spacing;
