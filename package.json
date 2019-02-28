@@ -1,0 +1,30 @@
+{
+  "name": "sassy-utils",
+  "version": "0.1.0",
+  "description": "Utilities for SASS, inspired by Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/main.scss public/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypher-uk/sassy-utils.git"
+  },
+  "keywords": [
+    "sass",
+    "utilities",
+    "bootstrap"
+  ],
+  "author": "Cypher Tech. Ltd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cypher-uk/sassy-utils/issues"
+  },
+  "homepage": "https://github.com/cypher-uk/sassy-utils#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.9",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "postcss-cli": "^6.1.2"
+  }
+}
