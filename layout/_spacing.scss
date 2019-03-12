@@ -1,32 +1,31 @@
-@mixin spacing {
-    @each $propName, $shortProp in $SPACING_PROPS {
-      @each $size, $space in $spacers {
-        $value: $space !important;
-        .#{$shortProp}-#{$size} {
-          #{$propName}: $value;
-        }
-        .#{$shortProp}x-#{$size} {
-          #{$propName}-left: $value;
-          #{$propName}-right: $value;
-        }
-        .#{$shortProp}y-#{$size} {
-          #{$propName}-top: $value;
-          #{$propName}-bottom: $value;
-        }
-        .#{$shortProp}t-#{$size} {
-          #{$propName}-top: $value;
-        }
-        .#{$shortProp}b-#{$size} {
-          #{$propName}-bottom: $value;
-        }
-        .#{$shortProp}l-#{$size} {
-          #{$propName}-left: $value;
-        }
-        .#{$shortProp}r-#{$size} {
-          #{$propName}-right: $value;
-        }
-      }
+
+@each $propName, $shortProp in $SPACING_PROPS {
+  @each $size, $space in $spacers {
+    $value: $space !important;
+    .#{$shortProp}-#{$size} {
+      #{$propName}: $value;
     }
+    .#{$shortProp}x-#{$size} {
+      #{$propName}-left: $value;
+      #{$propName}-right: $value;
+    }
+    .#{$shortProp}y-#{$size} {
+      #{$propName}-top: $value;
+      #{$propName}-bottom: $value;
+    }
+    .#{$shortProp}t-#{$size} {
+      #{$propName}-top: $value;
+    }
+    .#{$shortProp}b-#{$size} {
+      #{$propName}-bottom: $value;
+    }
+    .#{$shortProp}l-#{$size} {
+      #{$propName}-left: $value;
+    }
+    .#{$shortProp}r-#{$size} {
+      #{$propName}-right: $value;
+    }
+  }
 }
 
 // auto margining
@@ -57,5 +56,3 @@
 }
 
 //   todo:   negative spacing
-
-@include spacing;

@@ -1,0 +1,4 @@
+$overflowProps: scroll, auto, hidden, visible, inherit !default;
+@each $value in $overflowProps {
+  .overflow-#{$value} { overflow: $value !important; }
+}
