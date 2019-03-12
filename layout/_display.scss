@@ -1,0 +1,6 @@
+$displayProps: none, inline, inline-block, block, table, flex, inline-flex, table-row, table-cell, inherit !default;
+@each $value in $displayProps {
+  .d-#{$value} {
+    display: $value !important;
+  }
+}

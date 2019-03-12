@@ -1,0 +1,7 @@
+$positionProps: static, relative, absolute, fixed, sticky !default;
+
+@each $position in $positionProps {
+  .position-#{$position} {
+    position: $position !important;
+  }
+}
